@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0128A3981D84A12500FB35AC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0128A3971D84A12500FB35AC /* main.swift */; };
+		0128A3A11D84A1BD00FB35AC /* Watcher.c in Sources */ = {isa = PBXBuildFile; fileRef = 0128A39F1D84A1BD00FB35AC /* Watcher.c */; };
+		0128A3A31D84A3B300FB35AC /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0128A3A21D84A3B300FB35AC /* IOKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,9 @@
 /* Begin PBXFileReference section */
 		0128A3941D84A12500FB35AC /* KeyManager */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KeyManager; sourceTree = BUILT_PRODUCTS_DIR; };
 		0128A3971D84A12500FB35AC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		0128A39E1D84A1BC00FB35AC /* KeyManager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyManager-Bridging-Header.h"; sourceTree = "<group>"; };
+		0128A39F1D84A1BD00FB35AC /* Watcher.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Watcher.c; sourceTree = "<group>"; };
+		0128A3A21D84A3B300FB35AC /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0128A3A31D84A3B300FB35AC /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +47,7 @@
 		0128A38B1D84A12500FB35AC = {
 			isa = PBXGroup;
 			children = (
+				0128A3A21D84A3B300FB35AC /* IOKit.framework */,
 				0128A3961D84A12500FB35AC /* KeyManager */,
 				0128A3951D84A12500FB35AC /* Products */,
 			);
@@ -58,6 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				0128A3971D84A12500FB35AC /* main.swift */,
+				0128A39F1D84A1BD00FB35AC /* Watcher.c */,
+				0128A39E1D84A1BC00FB35AC /* KeyManager-Bridging-Header.h */,
 			);
 			path = KeyManager;
 			sourceTree = "<group>";
@@ -94,6 +103,7 @@
 				TargetAttributes = {
 					0128A3931D84A12500FB35AC = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -119,6 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0128A3A11D84A1BD00FB35AC /* Watcher.c in Sources */,
 				0128A3981D84A12500FB35AC /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,14 +222,23 @@
 		0128A39C1D84A12500FB35AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KeyManager/KeyManager-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		0128A39D1D84A12500FB35AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KeyManager/KeyManager-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -241,6 +261,7 @@
 				0128A39D1D84A12500FB35AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
